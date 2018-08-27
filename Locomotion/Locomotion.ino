@@ -59,7 +59,7 @@ if(left>-20 && left <20)
     else
       {
         pass(L1,HIGH,L2,LOW);
-        analogWrite(RPWM,-left);
+        analogWrite(LPWM,-left);
       }
   }
 
