@@ -1,0 +1,8 @@
+ch3 - right vert
+1850 1023
+ch1 - right horz
+1864 1031
+ch2 - left vert
+1845 1017
+ch4 left horz
+1824 999
