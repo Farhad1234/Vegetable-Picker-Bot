@@ -1,9 +1,9 @@
-#define L1 1
-#define L2 2
-#define R1 3
-#define R2 4
-#define RPWM 5
-#define LPWM 6
+#define L1 2
+#define L2 3
+#define R1 5
+#define R2 6
+#define RPWM 7
+#define LPWM 4
 
 void setup() {
 pinMode(L1,LOW)    ;
@@ -23,8 +23,8 @@ int leftin,rightin;
 rightin=pulseIn(A0,HIGH);
 leftin=pulseIn(A1,HIGH);
 
-rightin=map(rightin,1023,1850,-200,200);
-leftin=map(leftin,1017,1845,-200,200);
+rightin=map(rightin,1023,1850,-230,230);
+leftin=map(leftin,1017,1845,-230,230);
 
 Write(rightin,leftin);
 
