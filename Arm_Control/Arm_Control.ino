@@ -1,19 +1,21 @@
 #include<Servo.h>
+
 #define THRESHOLD 200
-int pos[]=[90,135,90,135];     //Initial position of the servo motors
+int pos[]={90,135,90,135};
+Servo S1,S2,S3,S4;
+
 
 void setup() {
   
-  Servo S1, S2, S3, S4;    
-  S1.attach(15);               //set the pins to servo object
-  S2.attach(16);
-  S3.attach(17);
-  S4.attach(18);
-  armreset();                  // sets pins to initial position
+  S1.attach(5);
+  S2.attach(6);
+  S3.attach(7);
+  S4.attach(8);
+  armreset();
 
 }
 
-void armreset()                // sets arms to the initial position
+void armreset()
 {
   S1.write(pos[0]);
   S2.write(pos[1]);
@@ -22,12 +24,12 @@ void armreset()                // sets arms to the initial position
 }
 
 
-void readData(int x, int y, int SIZE);  // to read data frpm raspberry pi after image processing
+//void readData(int x, int y, int SIZE);
 
-void setArmValues(int x,int y,int SIZE)  //adjust arm vlues based on the input from pi
+void setArmValues(int x,int y,int SIZE)
 {
   
-  if(mod(x)<5 && mod(y)<5)
+  if( abs(x) <5 && abs(y)<5)
       forward(SIZE);
   else
   {
@@ -88,7 +90,7 @@ void cut()
 void loop (){
                         //    SPI reads graphical data from RasPi
     int x,y,SIZE;
-    readData( x , y , SIZE );
+//    readData( x , y , SIZE );
     
     setArmValues(x,y,SIZE);
 }
