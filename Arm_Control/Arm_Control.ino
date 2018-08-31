@@ -84,7 +84,12 @@ void forward(int SIZE)
 
 void cut()
 {
-//  calibrate cutting 
+//   algo to cut
+//  calibrate cutting   
+  
+  
+//   When cut is complete
+    armreset();
 }
 
 void loop (){
