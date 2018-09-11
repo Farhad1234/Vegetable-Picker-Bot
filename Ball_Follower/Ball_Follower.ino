@@ -8,7 +8,6 @@ const int ctrl2= 6;       //PWM FOR RIGHT
 
 int pace=100;         //DEFAULT MOTION SPEED
 int pace2=100;        //DEFAULT MOTION SPEED
-
 void setup() {
     Serial.begin(9600);
     pinMode(L1,OUTPUT);
@@ -17,7 +16,7 @@ void setup() {
     pinMode(R2,OUTPUT);
     pinMode(ctrl,OUTPUT);
     pinMode(ctrl2,OUTPUT);
-    
+
   digitalWrite(L1,LOW);
   digitalWrite(L2,LOW);
   digitalWrite(R1,LOW);
@@ -49,6 +48,8 @@ void loop() {
       
       else if(val=='5')                 //STOP
           updateValue(0,0,0,0);
+
+      
   }
 }
 
@@ -66,8 +67,8 @@ void LF()
   digitalWrite(L1,HIGH);digitalWrite(L2,LOW);
   digitalWrite(R1,HIGH);digitalWrite(R2,LOW);
   
-  analogWrite(ctrl,75);
-  analogWrite(ctrl2,125);
+  analogWrite(ctrl,50);
+  analogWrite(ctrl2,150);
   
 }
 
@@ -77,7 +78,6 @@ void RF()
   digitalWrite(L1,HIGH);digitalWrite(L2,LOW);
   digitalWrite(R1,HIGH);digitalWrite(R2,LOW);
   
-  analogWrite(ctrl,125);
-  analogWrite(ctrl2,75);
+  analogWrite(ctrl,150);
+  analogWrite(ctrl2,50);
 }
-
